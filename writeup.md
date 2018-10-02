@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline description
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I ....
 1. Converting the image to grayscale
@@ -31,7 +31,7 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 The most interesting part of the process was identifying the best lines, which I did by using the median of the candidate line slopes, and throwing away and lines with slopes that were not between 30 and 60 degrees.  
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings
 
 
 One potential shortcoming would be that if a stray light colored pixel appears near a line, it can throw off the angle of the main line momentarily.
@@ -39,8 +39,8 @@ One potential shortcoming would be that if a stray light colored pixel appears n
 To deal with this, if there is no appropriate candidate line, I do not draw any line at all, which leaves brief moments when lane lines are not explicitly identified.
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Possible improvement
 
-A possible improvement would be to shrink the space of the polygonal mask  around the lane lines so there would be fewer distracting pixels.
+A possible improvement would be to shrink the space of the polygonal mask around the lane lines so there would be fewer distracting pixels.
 
 Thanks for reading!
