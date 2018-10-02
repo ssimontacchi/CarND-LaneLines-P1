@@ -35,8 +35,7 @@ The most interesting part of the process was identifying the best lines, which I
 
 ### 2. Potential shortcomings
 
-
-One potential shortcoming would be that if a stray light colored pixel appears near a line, it can throw off the angle of the main line momentarily.
+One potential shortcoming found during video analysis would be when a stray light colored pixel appears near a line, as it can throw off the angle of the main line momentarily.
 
 To deal with this, if there is no appropriate candidate line, I do not draw any line at all, which leaves brief moments when lane lines are not explicitly identified.
 
