@@ -1,8 +1,6 @@
-# **Finding Lane Lines on the Road** 
+# **Finding Lane Lines on the Road**
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+## Writeup
 
 ---
 
@@ -23,25 +21,26 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I ....
+1. Converting the image to grayscale
+2. Applying a Gaussian smoothing to reduce noise
+3. Applying Canny edge detection to find the edges of objects
+4. Applying a Hough Transform to generate lines from detected points
+5. Identify the best candidates for lines
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
+The most interesting part of the process was identifying the best lines, which I did by using the median of the candidate line slopes, and throwing away and lines with slopes that were not between 30 and 60 degrees.  
 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+One potential shortcoming would be that if a stray light colored pixel appears near a line, it can throw off the angle of the main line momentarily.
 
-Another shortcoming could be ...
+To deal with this, if there is no appropriate candidate line, I do not draw any line at all, which leaves brief moments when lane lines are not explicitly identified.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to shrink the space of the polygonal mask  around the lane lines so there would be fewer distracting pixels.
 
-Another potential improvement could be to ...
+Thanks for reading!
